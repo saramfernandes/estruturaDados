@@ -4,7 +4,7 @@ public class Pilha {
 
 	private Livro topo;
 	
-	public boolean estaVazia() {
+		public boolean estaVazia() {
 		return topo == null;
 	}
 	
