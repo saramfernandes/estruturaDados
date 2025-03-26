@@ -34,6 +34,7 @@ public class Pilha {
 		return "Pilha vazia";
 	}
 	
+	
 	public String ver() {
 		if (estaVazia()) {
 			return "Pilha vazia";
