@@ -11,6 +11,10 @@ public class No {
 		this.prioridade = prioridade;
 	}
 	
+	public No(String string, int prioridade2) {
+		// fiz isso para desquebrar o código, obrigada!
+	}
+
 	@Override
 	public String toString() {
 		return valor + " ";
