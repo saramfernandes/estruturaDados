@@ -35,7 +35,7 @@ public class Fila {
 		String retorno = "";
 		NoFila aux = inicio;
 		while (aux != null) {
-			retorno += aux.valor.toString() + " ";
+			retorno += aux.toString() + " ";
 			aux = aux.proximo;
 		}
 		return retorno;

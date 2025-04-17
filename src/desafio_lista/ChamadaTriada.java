@@ -11,6 +11,11 @@ public class ChamadaTriada {
 		setChamada(chamada);
 		setSeveridade(severidade);
 	}
+	
+	@Override
+	public String toString() {
+		return chamada.toString();
+	}
 
 	public Chamada getChamada() {
 		return chamada;

@@ -110,7 +110,7 @@ public class Lista {
 		String retorno = "";
 		ChamadaTriada atual = primeiro;
 		while (atual != null) {
-			retorno += atual.getChamada() + " " + atual.getSeveridade() + "\n";
+			retorno += atual.getChamada().toString() + " " + atual.getSeveridade() + " // ";
 			atual = atual.getProximo();
 		}
 		return retorno.trim();
