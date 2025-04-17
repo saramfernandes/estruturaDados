@@ -1,16 +1,16 @@
-package listas;
+package desafio_lista;
 
 public class Lista {
-	
-	private Elemento primeiro;
-	private Elemento ultimo;
+
+	private ChamadaTriada primeiro;
+	private ChamadaTriada ultimo;
 	private int tamanho;	
 	
-	public Elemento getPrimeiro() {
+	public ChamadaTriada getPrimeiro() {
 		return primeiro;
 	}
 
-	public Elemento getUltimo() {
+	public ChamadaTriada getUltimo() {
 		return ultimo;
 	}
 
@@ -23,44 +23,44 @@ public class Lista {
 		return tamanho == 0;
 	}
 	
-	public void insereInicio(Elemento elemento) {
+	public void insereInicio(ChamadaTriada chamadaTriada) {
 		if (isEmpty()) {
-			primeiro = elemento;
-			ultimo = elemento;
+			primeiro = chamadaTriada;
+			ultimo = chamadaTriada;
 		}else {
-			primeiro.setAnterior(elemento);
-			elemento.setProximo(primeiro);
-			primeiro = elemento;
+			primeiro.setAnterior(chamadaTriada);
+			chamadaTriada.setProximo(primeiro);
+			primeiro = chamadaTriada;
 		}
 		tamanho ++;
 	}
 	
-	public void insereFinal(Elemento elemento) {
+	public void insereFinal(ChamadaTriada chamadaTriada) {
 		if (isEmpty()) {
-			primeiro = elemento;
-			ultimo = elemento;
+			primeiro = chamadaTriada;
+			ultimo = chamadaTriada;
 		}else {
-			ultimo.setProximo(elemento);
-			elemento.setAnterior(ultimo);
-			ultimo = elemento;
+			ultimo.setProximo(chamadaTriada);
+			chamadaTriada.setAnterior(ultimo);
+			ultimo = chamadaTriada;
 		}
 		tamanho ++;	
 	}
 	
-	public void insereMeio(Elemento elemento, int posicao) {
+	public void insereMeio(ChamadaTriada chamadaTriada, int posicao) {
 		if (isEmpty()) {
-			primeiro = elemento;
-			ultimo = elemento;
+			primeiro = chamadaTriada;
+			ultimo = chamadaTriada;
 		}else {
 			if (posicao > tamanho) {	
-				Elemento aux = primeiro;
+				ChamadaTriada aux = primeiro;
 				for (int i = 0; i < posicao && i < tamanho; i ++) {
 					aux = aux.getProximo();
 				}
-				aux.getAnterior().setProximo(elemento);
-				elemento.setProximo(aux);
-				elemento.setAnterior(aux.getAnterior());
-				aux.setAnterior(elemento);	
+				aux.getAnterior().setProximo(chamadaTriada);
+				chamadaTriada.setProximo(aux);
+				chamadaTriada.setAnterior(aux.getAnterior());
+				aux.setAnterior(chamadaTriada);	
 			}
 		}
 		tamanho ++;
@@ -92,10 +92,10 @@ public class Lista {
 		}
 	}
 	
-	public boolean buscar(Elemento elemento) {
-		Elemento atual = primeiro;
+	public boolean buscar(ChamadaTriada chamadaTriada) {
+		ChamadaTriada atual = primeiro;
 		while (atual != null) {
-			if (atual.getValor().equals(elemento.getValor())) {
+			if (atual.getChamada().equals(chamadaTriada.getChamada())) {
 				return true;
 			}
 			atual = atual.getProximo();
@@ -108,12 +108,11 @@ public class Lista {
 			return "Lista vazia";
 		}
 		String retorno = "";
-		Elemento atual = primeiro;
+		ChamadaTriada atual = primeiro;
 		while (atual != null) {
-			retorno += atual.getValor() + " ";
+			retorno += atual.getChamada() + " " + atual.getSeveridade() + "\n";
 			atual = atual.getProximo();
 		}
 		return retorno.trim();
 	}
-	
 }
