@@ -17,7 +17,7 @@ public class ArvoreAvl {
 			return new No(valor);
 		}
 		
-		if (valor< no.vl) {
+		if (valor < no.vl) {
 			no.esquerda = inserirRecursivo(no.esquerda, valor);
 		}else if (valor > no.vl) {
 			no.direita = inserirRecursivo(no.direita, valor);
